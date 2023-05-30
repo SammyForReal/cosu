@@ -16,6 +16,9 @@ jobs:
       - name: Install amalg
         run: luarocks install amalg
   
+      - name: Check out repository code
+        uses: actions/checkout@v3
+  
       - name: Show bullshit
         run: ls -la
 
