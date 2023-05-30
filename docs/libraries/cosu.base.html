@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>CosuLib Documentation</title>
+    <link rel="stylesheet" href="../ldoc_fixed.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>cosu</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Utilities">Utilities </a></li>
+</ul>
+
+
+<h2>Libraries</h2>
+<ul class="nowrap">
+  <li><a href="../libraries/cosu.html">cosu</a></li>
+  <li><strong>cosu.base</strong></li>
+  <li><a href="../libraries/cosu.component.Component.html">cosu.component.Component</a></li>
+  <li><a href="../libraries/cosu.component.Grid.html">cosu.component.Grid</a></li>
+  <li><a href="../libraries/cosu.components.html">cosu.components</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>cosu.base</code></h1>
+<p>Returns basic functions for cosu.</p>
+<p> This module will be called on initial state of cosu (@see cosu).
+ It contains the basic structure of the actual module.</p>
+
+
+<h2><a href="#Utilities">Utilities </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#cosu.util.hash">cosu.util.hash (sInput)</a></td>
+	<td class="summary">Hashes a given string input to a representing number using the djb2 algorithm.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#cosu.util.getScreenPosition">cosu.util.getScreenPosition (Component)</a></td>
+	<td class="summary">Returns the actual screen position of the given Component.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#cosu.util.deepClone">cosu.util.deepClone (obj, knownTables)</a></td>
+	<td class="summary">Returns a exact copy of the given table and its sub-tables.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#cosu.util.search">cosu.util.search (t, value, getCondition, bSimilar)</a></td>
+	<td class="summary">Searches for a value in a table via binary search.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#cosu.util.genSetFunctions">cosu.util.genSetFunctions (Class)</a></td>
+	<td class="summary">Converts functions that don't return anything in a given Class to return their own Class.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Utilities"></a>Utilities </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "cosu.util.hash"></a>
+    <strong>cosu.util.hash (sInput)</strong>
+    </dt>
+    <dd>
+    Hashes a given string input to a representing number using the djb2 algorithm.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">sInput</span>
+         string The input to hash.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        number output The hashed result.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "cosu.util.getScreenPosition"></a>
+    <strong>cosu.util.getScreenPosition (Component)</strong>
+    </dt>
+    <dd>
+    Returns the actual screen position of the given Component.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">Component</span>
+         table The component.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        number nX The screen x position of the component.</li>
+        <li>
+        number nY The screen y position of the component.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "cosu.util.deepClone"></a>
+    <strong>cosu.util.deepClone (obj, knownTables)</strong>
+    </dt>
+    <dd>
+    Returns a exact copy of the given table and its sub-tables.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">obj</span>
+         table The table that should be cloned.
+        </li>
+        <li><span class="parameter">knownTables</span>
+        ? table Only needed internally. Contains the already cloned tables of the given table.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        any
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "cosu.util.search"></a>
+    <strong>cosu.util.search (t, value, getCondition, bSimilar)</strong>
+    </dt>
+    <dd>
+    Searches for a value in a table via binary search.  Returns the index of the value or nil if not found.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+         table The table that will be searched for the value.
+        </li>
+        <li><span class="parameter">value</span>
+         any The wanted value.
+        </li>
+        <li><span class="parameter">getCondition</span>
+        ? function If the elements inside the given table has some specific way to compare for, this function can be provided in addition.
+        </li>
+        <li><span class="parameter">bSimilar</span>
+        ? boolean Whenever it should take the next best value it can find or return nil. False by default.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        number|nil index The index of the value in the table or nil if not found.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "cosu.util.genSetFunctions"></a>
+    <strong>cosu.util.genSetFunctions (Class)</strong>
+    </dt>
+    <dd>
+    Converts functions that don't return anything in a given Class to return their own Class.
+ This way, the Classes methods can be mostly chained.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">Class</span>
+         table The Class with the methods to convert.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2023-05-24 23:39:24 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

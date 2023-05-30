@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>CosuLib Documentation</title>
+    <link rel="stylesheet" href="../ldoc_fixed.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>cosu</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Creator">Creator </a></li>
+<li><a href="#Functions">Functions </a></li>
+</ul>
+
+
+<h2>Libraries</h2>
+<ul class="nowrap">
+  <li><a href="../libraries/cosu.html">cosu</a></li>
+  <li><a href="../libraries/cosu.base.html">cosu.base</a></li>
+  <li><a href="../libraries/cosu.component.Component.html">cosu.component.Component</a></li>
+  <li><strong>cosu.component.Grid</strong></li>
+  <li><a href="../libraries/cosu.components.html">cosu.components</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>cosu.component.Grid</code></h1>
+<p>Stores other Component's <em>(childs)</em> and handles passing over events and such.</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Creator">Creator </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#cosu.new.Grid">cosu.new.Grid (nX, nY, nW, nH)</a></td>
+	<td class="summary">Creates a new Grid.</td>
+	</tr>
+</table>
+<h2><a href="#Functions">Functions </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#add">add (Component)</a></td>
+	<td class="summary">Adds a Component to the Grid.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#remove">remove (Component)</a></td>
+	<td class="summary">Removes a Component from the Grid.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#getContent">getContent ()</a></td>
+	<td class="summary">Returns the Component childs the Grid contains.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#subscribe">subscribe (Component, sEvent)</a></td>
+	<td class="summary">Subscribes an Component for an type of event this Grid may receive.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#unsubscribe">unsubscribe (Component, sEvent)</a></td>
+	<td class="summary">Unsubscribes an Component for an type of event.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#pass">pass (...)</a></td>
+	<td class="summary">Passes an event to the Grid's childs.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Creator"></a>Creator </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "cosu.new.Grid"></a>
+    <strong>cosu.new.Grid (nX, nY, nW, nH)</strong>
+    </dt>
+    <dd>
+    Creates a new Grid.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">nX</span>
+         number The x position of the upper left corner.
+        </li>
+        <li><span class="parameter">nY</span>
+         number The y position of the upper left corner.
+        </li>
+        <li><span class="parameter">nW</span>
+         number The width of the component.
+        </li>
+        <li><span class="parameter">nH</span>
+         number The height of the component.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table Grid A new Grid class.
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Functions"></a>Functions </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "add"></a>
+    <strong>add (Component)</strong>
+    </dt>
+    <dd>
+    Adds a Component to the Grid.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">Component</span>
+         table The Component to add. Will remove it from any other Grid it got added to before.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "remove"></a>
+    <strong>remove (Component)</strong>
+    </dt>
+    <dd>
+    Removes a Component from the Grid.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">Component</span>
+         table The Component to remove.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "getContent"></a>
+    <strong>getContent ()</strong>
+    </dt>
+    <dd>
+    Returns the Component childs the Grid contains.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table childs List of all childs the Grid has.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "subscribe"></a>
+    <strong>subscribe (Component, sEvent)</strong>
+    </dt>
+    <dd>
+    Subscribes an Component for an type of event this Grid may receive.
+ Those may be passed to the Component, if the Grid does not already listen for them by itself.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">Component</span>
+         table The Component to subscribe.
+        </li>
+        <li><span class="parameter">sEvent</span>
+         string The event that the Component wants to receive.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "unsubscribe"></a>
+    <strong>unsubscribe (Component, sEvent)</strong>
+    </dt>
+    <dd>
+    Unsubscribes an Component for an type of event.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">Component</span>
+         table The Component to subscribe.
+        </li>
+        <li><span class="parameter">sEvent</span>
+         string The type of event the Component should be unsubscribed to.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "pass"></a>
+    <strong>pass (...)</strong>
+    </dt>
+    <dd>
+    Passes an event to the Grid's childs.
+ The childs may handle further actions.
+ If the Grid listens for the same event however, it wont pass it any further.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+         any Arguments of the event, including the name.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2023-05-24 23:39:24 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

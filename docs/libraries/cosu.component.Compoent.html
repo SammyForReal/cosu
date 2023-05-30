@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>cosu Documentation</title>
+    <link rel="stylesheet" href="../ldoc_fixed.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>cosu</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Creator">Creator </a></li>
+<li><a href="#Functions">Functions </a></li>
+</ul>
+
+
+<h2>Libraries</h2>
+<ul class="nowrap">
+  <li><a href="../libraries/cosu.html">cosu</a></li>
+  <li><a href="../libraries/cosu.base.html">cosu.base</a></li>
+  <li><strong>cosu.component.Compoent</strong></li>
+  <li><a href="../libraries/cosu.component.Grid.html">cosu.component.Grid</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>cosu.component.Compoent</code></h1>
+<p>Component class</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Creator">Creator </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#cosu.new.Component">cosu.new.Component (nX, nY, nW, nH)</a></td>
+	<td class="summary">Creates a new Component.</td>
+	</tr>
+</table>
+<h2><a href="#Functions">Functions </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Component.setBG">Component.setBG (c)</a></td>
+	<td class="summary">Sets the background of this component.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Component.setFG">Component.setFG (c)</a></td>
+	<td class="summary">Sets the foreground of this component.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Component.setPos">Component.setPos (nX, nY)</a></td>
+	<td class="summary">Sets the position of the Component.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Component.setSize">Component.setSize (nW, nH)</a></td>
+	<td class="summary">Sets the size of the Component.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Component.getContent">Component.getContent ()</a></td>
+	<td class="summary">Returns the content a Component has.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Component.pass">Component.pass (...)</a></td>
+	<td class="summary">Passes an event to the Component, which may handle fourther actions.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Creator"></a>Creator </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "cosu.new.Component"></a>
+    <strong>cosu.new.Component (nX, nY, nW, nH)</strong>
+    </dt>
+    <dd>
+    Creates a new Component.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">nX</span>
+         number The x position of the upper left corner.
+        </li>
+        <li><span class="parameter">nY</span>
+         number The y position of the upper left corner.
+        </li>
+        <li><span class="parameter">nW</span>
+         number The width of the component.
+        </li>
+        <li><span class="parameter">nH</span>
+         number The height of the component.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        table Component A new Component class.
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Functions"></a>Functions </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "Component.setBG"></a>
+    <strong>Component.setBG (c)</strong>
+    </dt>
+    <dd>
+    Sets the background of this component.
+ In addition to the numbers of the colors API, {renderer.translucent}
+ can be used too for making that layer translucent.
+ If the default color should be used, nil can be used.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">c</span>
+         number|string|nil The color, {renderer.translucent} for translucent or nil for default.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Component.setFG"></a>
+    <strong>Component.setFG (c)</strong>
+    </dt>
+    <dd>
+    Sets the foreground of this component.
+ In addition to the numbers of the colors API, {renderer.translucent}
+ can be used too for making that layer translucent.
+ If the default color should be used, nil can be used.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">c</span>
+         number|string|nil The color, {renderer.translucent} for translucent or nil for default.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Component.setPos"></a>
+    <strong>Component.setPos (nX, nY)</strong>
+    </dt>
+    <dd>
+    Sets the position of the Component.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">nX</span>
+         number The new x position.
+        </li>
+        <li><span class="parameter">nY</span>
+         number The new y position.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Component.setSize"></a>
+    <strong>Component.setSize (nW, nH)</strong>
+    </dt>
+    <dd>
+    Sets the size of the Component.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">nW</span>
+         number The new width.
+        </li>
+        <li><span class="parameter">nH</span>
+         number The new height.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Component.getContent"></a>
+    <strong>Component.getContent ()</strong>
+    </dt>
+    <dd>
+    Returns the content a Component has.  May be overritten by classes that extend this one.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        any content Whatever this component stores.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Component.pass"></a>
+    <strong>Component.pass (...)</strong>
+    </dt>
+    <dd>
+    Passes an event to the Component, which may handle fourther actions.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+         any Arguments of the event, including the name.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2023-05-24 22:26:36 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
