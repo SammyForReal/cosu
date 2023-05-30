@@ -17,4 +17,4 @@ jobs:
         run: luarocks install amalg
 
       - name: Run amalg
-        run: amalg.lua ./src
+        run: amalg.lua src
