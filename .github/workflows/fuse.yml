@@ -15,6 +15,9 @@ jobs:
 
       - name: Install amalg
         run: luarocks install amalg
+  
+      - name: Show bullshit
+        run: ls -la
 
       - name: Run amalg
-        run: amalg.lua src
+        run: amalg.lua ~/src
