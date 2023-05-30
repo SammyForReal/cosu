@@ -1,10 +1,13 @@
 name: Fuse Project
 on:
-  release:
-    types: [created]
+  push:
+    tags:
+      - '*'
 
 jobs:
   fuse:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -20,4 +23,21 @@ jobs:
         run: luarocks install amalg
 
       - name: Run amalg
-        run: ~/.luarocks/bin/amalg.lua ~/src
+        run: .luarocks/bin/amalg.lua $(find ./src/ -iname \*.lua | sed -e "s/\.\///g" -e "s/.lua$//g") -o out.lua
+      
+      - name: Fix require part 1
+        run:
+          sed -i -e "s/src\//cosu\./g" -e "s/component\//component./g" out.lua
+
+      - name: Fix require part 2
+        run:
+          echo "return requre(\"cosu.init\")" >> out.lua
+
+      - name: Upload files to a GitHub release
+        uses: svenstaro/upload-release-action@2.6.0
+        with:
+          file: out.lua
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          asset_name: cosu.lua
+          tag: ${{ github.ref }}
+          overwrite: true
