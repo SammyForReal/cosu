@@ -8,10 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Lua/LuaJIT
-      - uses: leafo/gh-actions-lua@v10.0.0
-    
+        uses: leafo/gh-actions-lua@v10.0.0
+
       - name: Install LuaRocks
-      - uses: leafo/gh-actions-luarocks@v4.3.0
-      
-      - run: luarocks install amalg
-      - run: amalg.lua ./src
+        uses: leafo/gh-actions-luarocks@v4.3.0
+
+      - name: Install amalg
+        run: luarocks install amalg
+
+      - name: Run amalg
+        run: amalg.lua ./src
