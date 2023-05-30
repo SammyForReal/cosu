@@ -23,4 +23,4 @@ jobs:
         run: ls -la
 
       - name: Run amalg
-        run: amalg.lua ~/src
+        run: ~/.luarocks/bin/amalg.lua ~/src
